@@ -24,6 +24,9 @@
               <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="/todos">To-Do List</a>
               </li>
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="/new-todos">Create To-Do</a>
+              </li>
             </ul>
           </div>
         </div>

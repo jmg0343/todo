@@ -18,8 +18,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-// Route::get('/about', [AboutController::class, 'index']);
-
 Route::get('/todos', [TodosController::class, 'index']);
 
 Route::get('/todos/{todo}', [TodosController::class, 'show']);
+
+// send user to create view
+Route::get('/new-todos', [TodosController::class, 'create']);
+
+// stores new to-do
+Route::match(['get', 'post'] ,'/store-todo', [TodosController::class, 'store']);
