@@ -33,3 +33,5 @@ Route::get('todos/{todo}/edit', [TodosController::class, 'edit']);
 
 // updates to-do
 Route::match(['get', 'post'], 'todos/{todo}/update-todo', [TodosController::class, 'update']);
+
+Route::match(['get', 'delete'], '/todos/{todo}/delete', [TodosController::class, 'delete']);

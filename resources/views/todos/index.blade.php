@@ -17,6 +17,7 @@
                     @foreach ($todos as $todo)
                         <li class="list-group-item">
                             {{ $todo->name }}
+                            <a href="/todos/{{ $todo->id }}/delete" class="btn btn-danger btn-sm float-end ms-2">Delete</a>
                             <a href="/todos/{{ $todo->id }}" class="btn btn-primary btn-sm float-end">View</a>
                         </li>
                     @endforeach
