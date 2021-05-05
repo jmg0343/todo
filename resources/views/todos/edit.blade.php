@@ -6,7 +6,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card card-default">
-                <div class="card-header">Create New To-Do</div>
+                <div class="card-header">Edit To-Do</div>
 
                 <div class="card-body">
                     @if ($errors->any())
@@ -20,16 +20,17 @@
                             </ul>
                         </div>    
                     @endif
-                    <form action="/store-todo" method="POST">
+                    <form action="/todos/{{ $todo->id }}/update-todo" method="POST">
                         @csrf
+
                         <div class="mb-3">
-                            <input type="text" class="form-control" placeholder="name" name="name">
+                            <input type="text" class="form-control" placeholder="name" name="name" value="{{ $todo->name }}">
                         </div>
                         <div class="mb-3">
-                            <textarea name="description" placeholder="description" id="" cols="5" rows="5" class="form-control"></textarea>
+                            <textarea name="description" placeholder="description" id="" cols="5" rows="5" class="form-control">{{ $todo->description }}</textarea>
                         </div>
                         <div class="mb-3 text-center">
-                            <button type="submit" class="btn btn-success">Create</button>
+                            <button type="submit" class="btn btn-success">Update</button>
                         </div>
                     </form>
                 </div>

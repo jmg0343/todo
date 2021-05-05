@@ -27,3 +27,9 @@ Route::get('/new-todos', [TodosController::class, 'create']);
 
 // stores new to-do
 Route::match(['get', 'post'] ,'/store-todo', [TodosController::class, 'store']);
+
+// send user to edit view
+Route::get('todos/{todo}/edit', [TodosController::class, 'edit']);
+
+// updates to-do
+Route::match(['get', 'post'], 'todos/{todo}/update-todo', [TodosController::class, 'update']);
