@@ -9,6 +9,20 @@
                 <div class="card-header">Create New To-Do</div>
 
                 <div class="card-body">
+                    @if ($errors->any())
+                        <div>
+                            <ul class="list-group">
+                                @foreach ($errors->all() as $error)
+                                    {{-- <li class="list-group-item alert alert-danger" role="alert">
+                                        {{ $error }}
+                                    </li> --}}
+                                    <div class="alert alert-danger" role="alert">
+                                        {{ $error }}
+                                      </div>
+                                @endforeach
+                            </ul>
+                        </div>    
+                    @endif
                     <form action="/store-todo" method="POST">
                         @csrf
                         <div class="mb-3">
