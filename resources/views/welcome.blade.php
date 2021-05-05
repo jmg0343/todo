@@ -46,7 +46,7 @@
                 </div>
 
                 <div class="mt-8 bg-white dark:bg-gray-800 overflow-hidden shadow sm:rounded-lg">
-                    <a href="/todos" class="text-center"><h1>Todos</h1></a>
+                    <a href="/todos" class="text-center"><h1>To-Do</h1></a>
                 </div>
 
                 <div class="flex justify-center mt-4 sm:items-center sm:justify-between">
