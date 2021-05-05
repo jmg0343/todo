@@ -21,3 +21,5 @@ Route::get('/', function () {
 // Route::get('/about', [AboutController::class, 'index']);
 
 Route::get('/todos', [TodosController::class, 'index']);
+
+Route::get('/todos/{todo}', [TodosController::class, 'show']);
