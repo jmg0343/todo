@@ -15,6 +15,8 @@ class TodosController extends Controller
         return view('todos.index')->with('todos', $todos);
     }
 
+    // route/model binding automatically injects model instance that has matching ID
+    // as long as Todo model is type hinted
     public function show(Todo $todo)
     {
         return view('todos.show')->with('todo', $todo);
@@ -46,6 +48,10 @@ class TodosController extends Controller
         // save to database
         $todo->save();
 
+        // create flash message letting user know task was created
+        // layouts.app displays the message, since it will appear globally
+        session()->flash('success', 'Task successfully created!');
+
         return redirect('/todos');
     }
 
@@ -68,12 +74,16 @@ class TodosController extends Controller
 
         $todo->save();
 
+        session()->flash('success', 'Task sucessfully updated!');
+
         return redirect('/todos');
     }
 
     public function delete(Todo $todo)
     {
         $todo->delete();
+
+        session()->flash('success', 'Task successfully deleted!');
 
         return redirect('/todos');
     }

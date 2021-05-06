@@ -10,14 +10,17 @@
 <div class="row justify-content-center">
     <div class="col-md-8">
         <div class="card card-default">
-            <div class="card-header">To-do</div>
+            <div class="card-header">
+                To-do
+                <a href="/new-todos" class="btn btn-success btn-sm float-end"><i class="fa fa-plus" aria-hidden="true"></i></a>
+            </div>
 
             <div class="card-body">
                 <ul class="list-group">
                     @foreach ($todos as $todo)
                         <li class="list-group-item">
                             {{ $todo->name }}
-                            <a href="/todos/{{ $todo->id }}/delete" class="btn btn-danger btn-sm float-end ms-2">Delete</a>
+                            <a href="/todos/{{ $todo->id }}/delete" id="delete" onclick="return confirm('Are you sure you want to delete this item?');" class="btn btn-danger btn-sm float-end ms-2">Delete</a>
                             <a href="/todos/{{ $todo->id }}" class="btn btn-primary btn-sm float-end">View</a>
                         </li>
                     @endforeach

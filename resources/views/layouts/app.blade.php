@@ -11,6 +11,7 @@
         @yield('title')
     </title>
 </head>
+<script src="https://use.fontawesome.com/17f308ba61.js"></script>
 
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -32,7 +33,13 @@
         </div>
       </nav>
 
+      {{-- display flash message --}}
     <div class="container">
+        @if (session()->has('success'))
+            <div class="alert alert-success">
+              {{ session()->get('success') }}
+            </div>
+        @endif
         @yield('content')
     </div>
 

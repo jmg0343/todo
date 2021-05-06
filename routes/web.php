@@ -25,13 +25,14 @@ Route::get('/todos/{todo}', [TodosController::class, 'show']);
 // send user to create view
 Route::get('/new-todos', [TodosController::class, 'create']);
 
-// stores new to-do
+// stores new task
 Route::match(['get', 'post'] ,'/store-todo', [TodosController::class, 'store']);
 
 // send user to edit view
 Route::get('todos/{todo}/edit', [TodosController::class, 'edit']);
 
-// updates to-do
+// updates the tas
 Route::match(['get', 'post'], 'todos/{todo}/update-todo', [TodosController::class, 'update']);
 
+// deletes the task
 Route::match(['get', 'delete'], '/todos/{todo}/delete', [TodosController::class, 'delete']);
