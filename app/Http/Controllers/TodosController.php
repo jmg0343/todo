@@ -87,4 +87,13 @@ class TodosController extends Controller
 
         return redirect('/todos');
     }
+
+    public function complete(Todo $todo)
+    {
+        isset(request()->all()['undo']) ? $todo->completed = false : $todo->completed = true;
+
+        $todo->save();
+
+        return redirect('/todos');
+    }
 }

@@ -17,7 +17,7 @@
             </div>
         </div>
 
-        <a href="/todos/{{ $todo->id }}/edit" class="btn btn-info my-2">Edit</a>
+        <a href="/todos/{{ $todo->id }}/edit" class="btn btn-primary my-2">Edit</a>
         <a href="/todos/{{ $todo->id }}/delete" onclick="return confirm('Are you sure you want to delete this item?');" class="btn btn-danger my-2">Delete</a>
     </div>
 </div>

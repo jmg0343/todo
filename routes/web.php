@@ -36,3 +36,5 @@ Route::match(['get', 'post'], 'todos/{todo}/update-todo', [TodosController::clas
 
 // deletes the task
 Route::match(['get', 'delete'], '/todos/{todo}/delete', [TodosController::class, 'delete']);
+
+Route::get('/todos/{todo}/complete', [TodosController::class, 'complete']);
