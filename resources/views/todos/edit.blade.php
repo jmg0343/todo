@@ -31,6 +31,7 @@
                         </div>
                         <div class="mb-3 text-center">
                             <button type="submit" class="btn btn-success">Update</button>
+                            <a href="{{ route("todo.show", $todo->id) }}" class="btn btn-danger my-2">Cancel</a>
                         </div>
                     </form>
                 </div>

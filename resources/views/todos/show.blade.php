@@ -17,8 +17,14 @@
             </div>
         </div>
 
-        <a href="/todos/{{ $todo->id }}/edit" class="btn btn-primary my-2">Edit</a>
-        <a href="/todos/{{ $todo->id }}/delete" onclick="return confirm('Are you sure you want to delete this item?');" class="btn btn-danger my-2">Delete</a>
+        <a href="{{ route('todo.edit', $todo->id) }}" class="btn btn-success my-2">Edit</a>
+        <a href="{{ route('todo.index') }}" class="btn btn-primary my-2">Back To Tasks</a>
+        <a href="{{ route('todo.delete', $todo->id) }}" 
+            onclick="return confirm('Are you sure you want to delete this item?');" 
+            class="btn btn-danger my-2 pull-right"
+        >
+            Delete
+        </a>
     </div>
 </div>
 @endsection

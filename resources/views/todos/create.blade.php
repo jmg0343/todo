@@ -1,12 +1,12 @@
 @extends('layouts.app')
 
 @section('content')
-    <h1 class="text-center my-5">Create To-Do</h1>
+    <h1 class="text-center my-5">Create Task</h1>
 
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card card-default">
-                <div class="card-header">Create New To-Do</div>
+                <div class="card-header">Create New Task</div>
 
                 <div class="card-body">
                     @if ($errors->any())

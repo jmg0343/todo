@@ -18,9 +18,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/todos', [TodosController::class, 'index']);
+Route::get('/todos', [TodosController::class, 'index'])->name('todo.index');
 
-Route::get('/todos/{todo}', [TodosController::class, 'show']);
+// send user to list of tasks
+Route::get('/todos/{todo}', [TodosController::class, 'show'])->name('todo.show');
 
 // send user to create view
 Route::get('/new-todos', [TodosController::class, 'create']);
@@ -29,12 +30,12 @@ Route::get('/new-todos', [TodosController::class, 'create']);
 Route::match(['get', 'post'] ,'/store-todo', [TodosController::class, 'store']);
 
 // send user to edit view
-Route::get('todos/{todo}/edit', [TodosController::class, 'edit']);
+Route::get('todos/{todo}/edit', [TodosController::class, 'edit'])->name('todo.edit');
 
 // updates the tas
 Route::match(['get', 'post'], 'todos/{todo}/update-todo', [TodosController::class, 'update']);
 
 // deletes the task
-Route::match(['get', 'delete'], '/todos/{todo}/delete', [TodosController::class, 'delete']);
+Route::match(['get', 'delete'], '/todos/{todo}/delete', [TodosController::class, 'delete'])->name('todo.delete');
 
 Route::get('/todos/{todo}/complete', [TodosController::class, 'complete']);
